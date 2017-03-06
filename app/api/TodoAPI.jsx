@@ -42,21 +42,6 @@ module.exports = {
                 return text.indexOf(searchText) > -1
             });
         }
-
-        /*if(searchText.length > 0) {
-            filterTodos = filterTodos.filter((todo) => {
-                var regex = new RegExp(searchText);
-                if((todo.text).match(regex)) {
-                    if(showCompleted) {
-                        if(todo.completed) {
-                            return todo;
-                        }
-                    } else {
-                        return todo;
-                    }
-                }
-            });
-        }*/
         return filterTodos;
     }
 };
