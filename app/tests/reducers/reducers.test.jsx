@@ -10,7 +10,7 @@ describe('Reducers', () => {
                 type: 'SET_SEARCH_TEXT',
                 searchText: 'some search text'
             };
-            var res = reducers.setSearchTextReducer(df(''), df(action));
+            var res = reducers.searchTextReducer(df(''), df(action));
             expect(res).toEqual(action.searchText);
         });
     });
