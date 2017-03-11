@@ -6,7 +6,6 @@ export var searchTextReducer = (state = '', action) => {
         case 'SET_SEARCH_TEXT':
             return action.searchText
         default:
-        console.log('Hello');
             return state;
     }
 };
@@ -45,6 +44,11 @@ export var todosReducer = (state = [], action) => {
                 return todo;
                 
              });
+        case 'ADD_TODOS':
+            return [
+                ...state,
+                ...action.todos
+            ];
         default:
             return state;
     }
