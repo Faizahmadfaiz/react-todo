@@ -48,6 +48,22 @@ export var addTodos = (todos) => {
   };
 };
 
+export var startAddTodos = () => {
+  return (dispatch, getState) => {
+    return firebaseRef.child('todos').once('value').then((snapshot) => {
+      var data = snapshot.val() || {};
+  
+      var initialTodos = Object.keys(data).map((key) => {
+        return Object.assign({id: key}, data[key]);
+      });
+
+      dispatch(addTodos(initialTodos));
+    }, (e) => {
+      console.log('Error in fetching from DB');
+    });
+  }
+};
+
 export var updateTodo = (id, updates) => {
   return {
     type: 'UPDATE_TODO',
