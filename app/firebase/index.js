@@ -3,13 +3,12 @@ import firebase from 'firebase';
 try {
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyD1u9GI6dUAEFOdwrhZsaIPeqOKxISH8hs",
-        authDomain: "faiz-todo-app.firebaseapp.com",
-        databaseURL: "https://faiz-todo-app.firebaseio.com",
-        storageBucket: "faiz-todo-app.appspot.com",
-        messagingSenderId: "143628229218"
+        apiKey: process.env.API_KEY,
+        authDomain: process.env.AUTH_DOMAIN,
+        databaseURL: process.env.DATABASE_URL,
+        storageBucket: process.env.STORAGE_BUCKET,
+        messagingSenderId: process.env.MESSAGING_SENDER_ID
     };
-
     firebase.initializeApp(config);
 } catch(e) {
 
