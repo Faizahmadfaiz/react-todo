@@ -6,9 +6,11 @@ var TodoAPI = require('TodoAPI');
 export var TodoList = React.createClass({
   render: function () {
     var {todos, showCompleted, searchText} = this.props;
+    console.log("todos",todos);
     var renderTodos = () => {
       var filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
       if (filteredTodos.length === 0) {
+        console.log(filteredTodos.length);
         return (
           <p className="container__message">Nothing To Do</p>
         );
