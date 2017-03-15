@@ -4,10 +4,10 @@ var {Provider} = require('react-redux');
 var {Route, Router, IndexRoute, browserHistory} = require('react-router');
 
 import Login from 'Login';
-var TodoApp = require('TodoApp');
 var actions = require('actions');
 var store = require('configureStore').configure();
 var TodoAPI = require('TodoAPI');
+import TodoApp from 'TodoApp';
 
 store.dispatch(actions.startAddTodos());
 
