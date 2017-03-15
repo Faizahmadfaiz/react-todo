@@ -31,15 +31,11 @@ export var startAddTodo = (text) => {
       completedAt: null
     };
     var todoRef = firebaseRef.child('todos').push(todo);
-    console.log(todo);
     return todoRef.then(() => {
-      console.log('Suceess');
         dispatch(addTodo({
         ...todo,
         id: todoRef.key
       }));
-    }, (e) => {
-      console.log("FAIL! ");
     });
   };
 };
